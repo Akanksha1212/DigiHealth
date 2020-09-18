@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:digihealth/loginpage.dart';
+import 'package:digihealth/UI/Auth/loginpage.dart';
 
 void main() {
   runApp(MaterialApp(
