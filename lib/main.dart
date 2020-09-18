@@ -1,5 +1,5 @@
+import 'package:digihealth/UI/homePage.dart';
 import 'package:flutter/material.dart';
-import 'package:digihealth/UI/Auth/loginpage.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -18,12 +18,12 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     Future.delayed(
-      Duration(seconds: 4),
+      Duration(seconds: 2),
       () {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => LoginPage(),
+            builder: (context) => HomePage(),
           ),
         );
       },
@@ -34,15 +34,16 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-            constraints: BoxConstraints.expand(),
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: NetworkImage(
-                        "https://i.pinimg.com/564x/0b/aa/d3/0baad396804053238b9351882064f003.jpg"),
-                    fit: BoxFit.cover)),
-            child: Center(
-              child: Image.network("https://image.freepik.com/free-vector/online-doctor-concept_23-2148522555.jpg"),
-            )),
+          constraints: BoxConstraints.expand(),
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: NetworkImage(
+                      "https://i.pinimg.com/564x/0b/aa/d3/0baad396804053238b9351882064f003.jpg"),
+                  fit: BoxFit.cover)),
+          child: Center(
+            child: Image.network(
+                "https://image.freepik.com/free-vector/online-doctor-concept_23-2148522555.jpg"),
+          )),
     );
   }
 }
