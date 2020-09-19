@@ -30,6 +30,7 @@ class LoginPatientState extends State<LoginPatient> {
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
                   controller: _emailController,
+                  keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "Email Id",
@@ -51,6 +52,7 @@ class LoginPatientState extends State<LoginPatient> {
                     border: OutlineInputBorder(),
                     labelText: "Password",
                   ),
+                  obscureText: true,
                   validator: (val) {
                     if (val.isEmpty) {
                       return "Please Enter a Password";

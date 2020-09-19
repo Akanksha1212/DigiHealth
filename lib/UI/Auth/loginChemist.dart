@@ -52,6 +52,7 @@ class LoginChemistState extends State<LoginChemist> {
                     border: OutlineInputBorder(),
                     labelText: "Email Id",
                   ),
+                  keyboardType: TextInputType.emailAddress,
                   validator: (val) {
                     if (val.isEmpty) {
                       return "Please Enter a Email Id";
@@ -69,6 +70,7 @@ class LoginChemistState extends State<LoginChemist> {
                     border: OutlineInputBorder(),
                     labelText: "Password",
                   ),
+                  obscureText: true,
                   validator: (val) {
                     if (val.isEmpty) {
                       return "Please Enter a Password";
