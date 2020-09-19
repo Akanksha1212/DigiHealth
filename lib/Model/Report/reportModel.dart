@@ -13,6 +13,7 @@ class Report {
   Report({
     this.reportDate,
     this.description,
+    this.reportUID,
     this.patientUID,
     this.patientName,
     this.doctorName,
@@ -22,6 +23,7 @@ class Report {
 
   Report.fromMap(Map<String, dynamic> map) {
     this.reportDate = map["reportDate"].toDate();
+    this.reportUID = map["reportUID"];
     this.description = map["description"];
     this.patientName = map["patientName"];
     this.patientUID = map["patientUID"];
@@ -36,6 +38,7 @@ class Report {
   toJson() {
     return {
       "reportDate": this.reportDate,
+      "reportUID": this.reportUID,
       "description": this.description,
       "patientName": this.patientName,
       "patientUID": this.patientUID,
