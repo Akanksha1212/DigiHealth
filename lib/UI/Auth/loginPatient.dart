@@ -1,3 +1,5 @@
+import 'package:digihealth/Service/signInMethod.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 
@@ -10,6 +12,7 @@ class LoginPatientState extends State<LoginPatient> {
   final formKey = GlobalKey<FormState>();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passController = TextEditingController();
+  User user;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,11 +62,36 @@ class LoginPatientState extends State<LoginPatient> {
               ),
               Padding(
                 padding: EdgeInsets.all(8),
-                child: GFButton(
-                  onPressed: () {},
-                  text: "Login",
-                  color: Colors.pink[200],
-                  shape: GFButtonShape.standard,
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Expanded(
+                      child: GFButton(
+                        key: ValueKey("sign in"),
+                        child: Text("Sign In"),
+                        type: GFButtonType.outline,
+                        onPressed: () async {
+                          user = await SignInMethods.trySignIn(
+                              _emailController.text, _passController.text);
+                        },
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: GFButton(
+                        key: ValueKey("sign up"),
+                        child: Text("Sign Up"),
+                        type: GFButtonType.outline,
+                        onPressed: () {
+                          SignInMethods.signUpNewUser(
+                            _emailController.text,
+                            _passController.text,
+                          );
+                        },
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],

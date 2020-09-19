@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "4096986367",
+    "firebase_url": "https://digihealth-b6016.firebaseio.com",
+    "project_id": "digihealth-b6016",
+    "storage_bucket": "digihealth-b6016.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:4096986367:android:dcb5e5519b3f200e2410ca",
+        "android_client_info": {
+          "package_name": "com.example.digihealth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "4096986367-767kmm0f18c30d90ropna5m5fg6vujk8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.digihealth",
+            "certificate_hash": "5a00d73fcd9a2d9cf05adf595d40ecef1a5b4bcd"
+          }
+        },
+        {
+          "client_id": "4096986367-rt77tb66cr0hn06vt2lt1jhpmhba04rv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtr303Ij0YewMqYPqOsON1mLkOlzEjuAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "4096986367-rt77tb66cr0hn06vt2lt1jhpmhba04rv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
