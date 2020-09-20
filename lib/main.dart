@@ -45,8 +45,7 @@ class _MyAppState extends State<MyApp> {
                       "https://i.pinimg.com/564x/0b/aa/d3/0baad396804053238b9351882064f003.jpg"),
                   fit: BoxFit.cover)),
           child: Center(
-            child: Image.network(
-                "https://image.freepik.com/free-vector/online-doctor-concept_23-2148522555.jpg"),
+            child: Image.asset('assets/logo.png',height: 300,),
           )),
     );
   }
