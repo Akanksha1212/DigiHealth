@@ -3,10 +3,9 @@ import 'package:digihealth/Bloc/patientEvent.dart';
 import 'package:digihealth/UI/Patient/patients.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
-import 'Auth/loginPatient.dart';
 import 'package:flutter/material.dart';
 import 'Auth/loginChemist.dart';
-import 'Auth/loginDoctor.dart';
+import 'Doctor/doctor.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -58,7 +57,7 @@ class HomePage extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => LoginDoctor()));
+                    MaterialPageRoute(builder: (context) => DoctorPage()));
               },
             ),
             InkWell(

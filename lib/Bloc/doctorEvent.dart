@@ -12,3 +12,10 @@ class GetDoctorData extends DoctorEvent {
   String email;
   GetDoctorData({@required this.email});
 }
+
+class GetPatientReport extends DoctorEvent {
+  String uid;
+  GetPatientReport({@required this.uid});
+}
+
+
