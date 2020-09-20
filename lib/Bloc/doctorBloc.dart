@@ -52,6 +52,7 @@ class DoctorBloc extends Bloc {
           for (int i = 0; i < snapshot.docs.length; i++) {
             _report.add(Report.fromMap(snapshot.docs[i].data()));
           }
+          print(_report.length);
           reportSink.add(_report);
         },
       );
