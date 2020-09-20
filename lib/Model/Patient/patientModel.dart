@@ -22,7 +22,7 @@ class PatientModel {
     this.uid = map["uid"];
     this.email = map["email"];
     this.contact = map["contact"];
-    this.dateOfBirth = map["dateOfBirth"];
+    this.dateOfBirth = map["dateOfBirth"].toDate();
     this.address =
         map["address"] != null ? Address.fromMap(map["address"]) : null;
   }

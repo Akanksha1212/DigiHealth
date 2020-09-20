@@ -1,3 +1,6 @@
+import 'package:digihealth/Bloc/patientBloc.dart';
+import 'package:digihealth/Bloc/patientEvent.dart';
+import 'package:digihealth/Model/Patient/patientModel.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -25,7 +28,8 @@ class SignInMethods {
     }
   }
 
-  static Future<User> signUpNewUser(String email, String password) async {
+  static Future<User> signUpNewUser(
+      String email, String password, PatientBloc patientBloc) async {
     User firebaseUser;
     try {
       firebaseUser =
@@ -41,12 +45,13 @@ class SignInMethods {
     if (firebaseUser != null) {
       print("Successfully Signed Up with Email and Password");
       print("new user In UID: ${firebaseUser.uid}");
-      if (firebaseUser.emailVerified) {
-        print("Email already verified");
-      } else {
-        print("Sending email verification link");
-        await firebaseUser.sendEmailVerification();
-      }
+
+      PatientModel _patient = PatientModel(
+        email: firebaseUser.email,
+        uid: "",
+        name: "",
+      );
+      patientBloc.eventSink.add(RegisterPatient(patientModel: _patient));
       return firebaseUser;
     } else {
       print("Failed SignUp with Email and Password");

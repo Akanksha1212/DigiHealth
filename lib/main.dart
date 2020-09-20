@@ -1,14 +1,26 @@
+import 'package:digihealth/Bloc/chemistBloc.dart';
+import 'package:digihealth/Bloc/doctorBloc.dart';
+import 'package:digihealth/Bloc/patientBloc.dart';
 import 'package:digihealth/Service/signInHandler.dart';
-import 'package:digihealth/UI/homePage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: MyApp(),
+  runApp(BlocProvider(
+    bloc: PatientBloc(),
+    child: BlocProvider(
+      bloc: DoctorBloc(),
+      child: BlocProvider(
+        bloc: ChemistBloc(),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: MyApp(),
+        ),
+      ),
+    ),
   ));
 }
 

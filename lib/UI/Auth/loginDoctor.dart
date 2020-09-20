@@ -104,10 +104,10 @@ class LoginDoctorState extends State<LoginDoctor> {
                         child: Text("Sign Up"),
                         type: GFButtonType.outline,
                         onPressed: () {
-                          SignInMethods.signUpNewUser(
-                            _emailController.text,
-                            _passController.text,
-                          );
+                          // SignInMethods.signUpNewUser(
+                          //   _emailController.text,
+                          //   _passController.text,
+                          // );
                         },
                       ),
                     ),

@@ -1,6 +1,8 @@
+import 'package:digihealth/Bloc/patientBloc.dart';
 import 'package:digihealth/Service/signInMethod.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:getwidget/getwidget.dart';
 
 class LoginPatient extends StatefulWidget {
@@ -12,9 +14,11 @@ class LoginPatientState extends State<LoginPatient> {
   final formKey = GlobalKey<FormState>();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passController = TextEditingController();
+  PatientBloc patientBloc;
   User user;
   @override
   Widget build(BuildContext context) {
+    patientBloc = BlocProvider.of<PatientBloc>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text('LogIn'),
@@ -89,6 +93,7 @@ class LoginPatientState extends State<LoginPatient> {
                           SignInMethods.signUpNewUser(
                             _emailController.text,
                             _passController.text,
+                            patientBloc,
                           );
                         },
                       ),

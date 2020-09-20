@@ -1,6 +1,8 @@
+import 'package:digihealth/Bloc/chemistBloc.dart';
 import 'package:digihealth/Service/signInMethod.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:getwidget/getwidget.dart';
 
 class LoginChemist extends StatefulWidget {
@@ -14,8 +16,10 @@ class LoginChemistState extends State<LoginChemist> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _codeController = TextEditingController();
   TextEditingController _passController = TextEditingController();
+  ChemistBloc chemistBloc;
   @override
   Widget build(BuildContext context) {
+    chemistBloc = BlocProvider.of(context);
     return Scaffold(
       appBar: AppBar(
         title: Text('LogIn'),
@@ -104,10 +108,10 @@ class LoginChemistState extends State<LoginChemist> {
                         child: Text("Sign Up"),
                         type: GFButtonType.outline,
                         onPressed: () {
-                          SignInMethods.signUpNewUser(
-                            _emailController.text,
-                            _passController.text,
-                          );
+                          // SignInMethods.signUpNewUser(
+                          //   _emailController.text,
+                          //   _passController.text,
+                          // );
                         },
                       ),
                     ),
